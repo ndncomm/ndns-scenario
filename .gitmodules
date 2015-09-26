@@ -1,0 +1,3 @@
+[submodule "ndns"]
+	path = ndns
+	url = git@github.com:ndncomm/ndns.git
