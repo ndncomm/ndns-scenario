@@ -1,6 +1,8 @@
 Prerequisites
 =============
 
+[![Join the chat at https://gitter.im/ndncomm/ndns-scenario](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/ndncomm/ndns-scenario?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Custom version of NS-3 and specified version of ndnSIM needs to be installed.
 
 The code should also work with the latest version of ndnSIM, but it is not guaranteed.
