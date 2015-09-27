@@ -43,7 +43,7 @@ public:
     // config.addSectionHandler("hints",
     //                            bind(&NdnsDaemon::processHintsSection, this, _1, _3));
 
-    config.parse(configFile, false);
+    // config.parse(configFile, false);
   }
 
   void
