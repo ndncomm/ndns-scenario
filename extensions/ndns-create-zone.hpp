@@ -41,8 +41,6 @@ public:
 
   void
   createZone() {
-    ndn::ndns::ManagementTool tool(m_db, m_keyChain);
-    //m_tool = tool;
     m_tool.createZone(m_zone, m_parent, m_cacheTtl, m_certTtl, m_ksk, m_dsk);
   }
 
