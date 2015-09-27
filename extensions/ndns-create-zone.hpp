@@ -131,7 +131,7 @@ public:
   }
 
   void
-  getDb(std::string dbStr)
+  setDb(std::string dbStr)
   {
     m_db = dbStr;
   }
