@@ -28,6 +28,12 @@ DaemonHelper::DaemonHelper(std::string db, ndn::ndns::ManagementTool& tool)
 {
 }
 
+DaemonHelper::~DaemonHelper()
+{
+  std::system(("rm " + m_db).c_str());
+}
+
+
 void
 DaemonHelper::createZone(std::string& zoneStr, std::string& parentStr, int cacheTtlInt, int certTtlInt,
                          std::string& kskStr, std::string& dskStr)
@@ -50,11 +56,6 @@ void
 DaemonHelper::setDb(std::string& dbStr)
 {
   m_db = dbStr;
-}
-
-DaemonHelper::~DaemonHelper()
-{
-  
 }
 
 } // ndns namespace
