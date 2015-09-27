@@ -40,10 +40,15 @@ public:
 
     config.addSectionHandler("zones",
                                bind(&NdnsDaemon::processZonesSection, this, _1, _3));
-    // config.addSectionHandler("hints",
-    //                            bind(&NdnsDaemon::processHintsSection, this, _1, _3));
+     config.addSectionHandler("hints",
+                              bind(&NdnsDaemon::processHintsSection, this, _1, _3));
 
-    // config.parse(configFile, false);
+    config.parse(configFile, false);
+  }
+
+  void
+  processHintsSection(const ndn::ndns::ConfigSection& section, const std::string& filename)
+  {
   }
 
   void
