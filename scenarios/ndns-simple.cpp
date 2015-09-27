@@ -49,7 +49,7 @@ main(int argc, char* argv[])
   ndn::AppHelper producerHelper("NdnsServerApp");
   // Producer will reply to all requests starting with /prefix
   //producerHelper.SetPrefix("/prefix");
-  producerHelper.SetAttribute("ConfigFile", StringValue("/Users/dibenede/Sites/ndn/hackathon/ndnSIM/ndns-scenario/ndns.conf.sample"));
+  producerHelper.SetAttribute("ConfigFile", StringValue("ndns.conf.sample"));
   producerHelper.Install(nodes.Get(2)); // last node
 
   Simulator::Stop(Seconds(20.0));

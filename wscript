@@ -10,7 +10,7 @@ import os
 def options(opt):
     opt.load(['compiler_c', 'compiler_cxx'])
     opt.load(['default-compiler-flags',
-              'boost', 'ns3'],
+              'boost', 'ns3', 'sqlite3'],
              tooldir=['.waf-tools'])
 
     opt.add_option('--logging',action='store_true',default=True,dest='logging',help='''enable logging in simulation scripts''')
@@ -34,7 +34,7 @@ OTHER_NS3_MODULES = ['antenna', 'aodv', 'bridge', 'brite', 'buildings', 'click',
 def configure(conf):
     conf.load(['compiler_c', 'compiler_cxx',
                'default-compiler-flags',
-               'boost', 'ns3'])
+               'boost', 'ns3', 'sqlite3'])
 
     if not os.environ.has_key('PKG_CONFIG_PATH'):
         os.environ['PKG_CONFIG_PATH'] = ':'.join([
@@ -64,6 +64,8 @@ def configure(conf):
     if conf.options.logging:
         conf.define('NS3_LOG_ENABLE', 1)
         conf.define('NS3_ASSERT_ENABLE', 1)
+
+    conf.check_sqlite3(mandatory=True)
 
     conf.write_config_header('ndns/src/config.hpp', remove=False)
 
