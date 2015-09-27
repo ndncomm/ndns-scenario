@@ -5,6 +5,8 @@
 #include "ns3/point-to-point-module.h"
 #include "ns3/ndnSIM-module.h"
 
+#include "../extensions/ndns-daemon-helper.hpp"
+
 namespace ns3 {
 
 int
@@ -44,6 +46,15 @@ main(int argc, char* argv[])
   //consumerHelper.SetPrefix("/prefix");
   //consumerHelper.SetAttribute("Frequency", StringValue("10")); // 10 interests a second
   consumerHelper.Install(nodes.Get(0));                        // first node
+
+  ::ndn::ndns::ManagementTool tool("test.db", ns3::ndn::StackHelper::getKeyChain());
+  ::ndn::ndns::DaemonHelper daemonHelper("test.db", tool);
+
+  string zone = "/";
+  string parent = "/";
+  string ksk = "";
+  string dsk = "";
+  daemonHelper.createZone(zone, parent, 100, 200, ksk, dsk);
 
   // Producer
   ndn::AppHelper producerHelper("NdnsServerApp");
