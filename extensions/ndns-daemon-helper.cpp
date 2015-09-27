@@ -52,5 +52,10 @@ DaemonHelper::setDb(std::string& dbStr)
   m_db = dbStr;
 }
 
+DaemonHelper::~DaemonHelper()
+{
+  
+}
+
 } // ndns namespace
 } // ndn namespace

@@ -46,6 +46,8 @@ public:
   void
   setDb(std::string& dbStr);
 
+  ~DaemonHelper();
+
 private:
   std::string m_db;
   ndn::ndns::ManagementTool& m_tool;

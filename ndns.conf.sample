@@ -1,6 +1,6 @@
 zones
 {
-  ; dbFile @DEFAULT_DATABASE_PATH@/ndns.db
+  dbFile "test.db"
   ; validatorConfigFile @DEFAULT_CONFIG_PATH@/validator.conf
 
   zone
