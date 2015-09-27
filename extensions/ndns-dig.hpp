@@ -63,7 +63,7 @@ public:
   }
 
   void
-  setdstLabel(Name dstLabel)
+  setDstLabel(Name dstLabel)
   {
     m_dstLabel = dstLabel;
   }
